@@ -24,44 +24,42 @@ export default function Home(props) {
   };
 
   return (
-    <section>
-      <Container maxWidth="lg">
-        <Grid container>
-          <Grid item xs={12} lg={6}>
-            <Box className={classes.contentBox}>
-              <Typography variant="h3" component="h2" gutterBottom={true}>
-                {content["header"]}
-              </Typography>
-              <Typography variant="h5" color="inherit" paragraph={true}>
-                {content["description"]}
-              </Typography>
-              <Box mt={4}>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  className={classes.primaryAction}
-                >
-                  {content["primary-action"]}
-                </Button>
-                <Button variant="contained" className={classes.secondaryAction}>
-                  {content["secondary-action"]}
-                </Button>
-              </Box>
+    <Container maxWidth="lg">
+      <Grid container>
+        <Grid item xs={12} lg={6}>
+          <Box className={classes.contentBox}>
+            <Typography variant="h3" component="h2" gutterBottom={true}>
+              {content["header"]}
+            </Typography>
+            <Typography variant="h5" color="inherit" paragraph={true}>
+              {content["description"]}
+            </Typography>
+            <Box mt={4}>
+              <Button
+                variant="contained"
+                color="primary"
+                className={classes.primaryAction}
+              >
+                {content["primary-action"]}
+              </Button>
+              <Button variant="contained" className={classes.secondaryAction}>
+                {content["secondary-action"]}
+              </Button>
             </Box>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <Box className={classes.videoBoxRoot}>
-              <Card className={classes.cardRoot}>
-                <CardMedia
-                  className={classes.cardMedia}
-                  component="iframe"
-                  src={content["video"]}
-                />
-              </Card>
-            </Box>
-          </Grid>
+          </Box>
         </Grid>
-      </Container>
-    </section>
+        <Grid item xs={12} lg={6}>
+          <Box className={classes.videoBoxRoot}>
+            <Card className={classes.cardRoot}>
+              <CardMedia
+                className={classes.cardMedia}
+                component="iframe"
+                src={content["video"]}
+              />
+            </Card>
+          </Box>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }

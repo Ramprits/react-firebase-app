@@ -33,6 +33,8 @@ export default makeStyles((theme) => ({
   },
   tab: {
     minHeight: "64px",
+    textTransform: "none",
+    minWidth: "100px",
   },
   drawerContainer: {
     width: 256,

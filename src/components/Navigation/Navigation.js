@@ -1,5 +1,5 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import React, { useEffect, useState } from "react";
+import { withRouter } from "react-router-dom";
 
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -22,10 +22,22 @@ import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 
 import useStyles from "./styles";
 
-export default function HorizontalNav(props) {
+const routerName = {
+  0: "home",
+  1: "product",
+  2: "support",
+  3: "contact",
+};
+const HorizontalNav = (props) => {
   const classes = useStyles();
+  const [state, setState] = useState(0);
 
-  const [state, setState] = React.useState({ open: false });
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+    props.history.push(`/${routerName[newValue]}`);
+  };
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -37,7 +49,20 @@ export default function HorizontalNav(props) {
 
     setState({ ...state, open });
   };
-
+  useEffect(() => {
+    if (window.location.pathname === "/home" && value !== 0) {
+      setValue(0);
+    }
+    if (window.location.pathname === "/product" && value !== 1) {
+      setValue(1);
+    }
+    if (window.location.pathname === "/support" && value !== 2) {
+      setValue(2);
+    }
+    if (window.location.pathname === "/contact" && value !== 3) {
+      setValue(3);
+    }
+  }, [value]);
   return (
     <AppBar position="static">
       <Toolbar className={classes.toolbar}>
@@ -76,33 +101,34 @@ export default function HorizontalNav(props) {
             width="32"
           />
         </Link>
-        <Tabs value={0} className={classes.tabs}>
+        <Tabs
+          value={value}
+          className={classes.tabs}
+          onChange={handleChange}
+          aria-label="simple tabs example"
+        >
           <Tab
-            href="#"
-            component={Link}
-            label="Features"
+            label="Home"
             color="inherit"
+            underline="none"
             className={classes.tab}
           />
           <Tab
-            href="#"
-            component={Link}
-            label="Enterprise"
+            label="Product"
             color="inherit"
+            underline="none"
             className={classes.tab}
           />
           <Tab
-            href="#"
-            component={Link}
             label="Support"
+            underline="none"
             color="inherit"
             className={classes.tab}
           />
           <Tab
-            href="#"
-            component={Link}
-            label="ICO"
+            label="Contact"
             color="inherit"
+            underline="none"
             className={classes.tab}
           />
         </Tabs>
@@ -146,4 +172,5 @@ export default function HorizontalNav(props) {
       </Drawer>
     </AppBar>
   );
-}
+};
+export default withRouter(HorizontalNav);

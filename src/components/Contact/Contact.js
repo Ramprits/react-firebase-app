@@ -19,93 +19,85 @@ export default function Contact(props) {
   };
 
   return (
-    <section>
-      <Container maxWidth="sm">
-        <Box pt={8} pb={10}>
-          <Box mb={6} textAlign="center">
-            <Typography variant="h4" component="h2" gutterBottom={true}>
-              {content["header"]}
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              color="inherit"
-              paragraph={true}
-            >
-              {content["description"]}
-            </Typography>
-          </Box>
-          <Box>
-            <form noValidate>
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    variant="outlined"
-                    required
-                    fullWidth
-                    autoComplete="fname"
-                    name="firstName"
-                    id="firstName"
-                    label="First name"
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    variant="outlined"
-                    required
-                    fullWidth
-                    name="lastName"
-                    id="lastName"
-                    label="Last name"
-                    autoComplete="lname"
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    required
-                    fullWidth
-                    name="email"
-                    id="email"
-                    label="Email address"
-                    autoComplete="email"
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    required
-                    multiline
-                    rows={5}
-                    fullWidth
-                    autoComplete="message"
-                    name="message"
-                    id="message"
-                    label="Message"
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <FormControlLabel
-                    control={
-                      <Checkbox name="terms" value="1" color="primary" />
-                    }
-                    label={content["terms"]}
-                  />
-                </Grid>
-              </Grid>
-              <Box my={2}>
-                <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  color="primary"
-                >
-                  {content["primary-action"]}
-                </Button>
-              </Box>
-            </form>
-          </Box>
+    <Container maxWidth="sm">
+      <Box pt={8} pb={10}>
+        <Box mb={6} textAlign="center">
+          <Typography variant="h4" component="h2" gutterBottom={true}>
+            {content["header"]}
+          </Typography>
+          <Typography variant="subtitle1" color="inherit" paragraph={true}>
+            {content["description"]}
+          </Typography>
         </Box>
-      </Container>
-    </section>
+        <Box>
+          <form noValidate>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  autoComplete="fname"
+                  name="firstName"
+                  id="firstName"
+                  label="First name"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="lastName"
+                  id="lastName"
+                  label="Last name"
+                  autoComplete="lname"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="email"
+                  id="email"
+                  label="Email address"
+                  autoComplete="email"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant="outlined"
+                  required
+                  multiline
+                  rows={5}
+                  fullWidth
+                  autoComplete="message"
+                  name="message"
+                  id="message"
+                  label="Message"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <FormControlLabel
+                  control={<Checkbox name="terms" value="1" color="primary" />}
+                  label={content["terms"]}
+                />
+              </Grid>
+            </Grid>
+            <Box my={2}>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+              >
+                {content["primary-action"]}
+              </Button>
+            </Box>
+          </form>
+        </Box>
+      </Box>
+    </Container>
   );
 }
