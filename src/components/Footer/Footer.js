@@ -24,7 +24,7 @@ export default function Footer(props) {
       <Container maxWidth="lg">
         <Box py={6} display="flex" flexWrap="wrap" alignItems="center">
           <Typography
-            color="textSecondary"
+            color="inherit"
             component="p"
             gutterBottom={false}
             className={classes.copy}
@@ -32,16 +32,16 @@ export default function Footer(props) {
             {content["copy"]}
           </Typography>
           <Box ml="auto" className={classes.iconsBoxRoot}>
-            <IconButton color="textSecondary" aria-label="Twitter">
+            <IconButton color="inherit" aria-label="Twitter">
               <TwitterIcon />
             </IconButton>
-            <IconButton color="textSecondary" aria-label="Facebook">
+            <IconButton color="inherit" aria-label="Facebook">
               <FacebookIcon />
             </IconButton>
-            <IconButton color="textSecondary" aria-label="Instagram">
+            <IconButton color="inherit" aria-label="Instagram">
               <InstagramIcon />
             </IconButton>
-            <IconButton color="textSecondary" aria-label="LinkedIn">
+            <IconButton color="inherit" aria-label="LinkedIn">
               <LinkedInIcon />
             </IconButton>
           </Box>

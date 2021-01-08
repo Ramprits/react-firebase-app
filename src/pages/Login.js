@@ -1,15 +1,15 @@
 import React from "react";
 
-import SignIn2 from "../components/sign-in";
+import SignIn from "../components/sign-in";
 
 export default function Login() {
   return (
     <React.Fragment>
-      <SignIn2
+      <SignIn
         content={{
           brand: {
             text: "Dhanai Fruits",
-            image: "",
+            image: "mui-assets/img/logo-pied-piper-white-icon.png",
             width: "40",
           },
         }}

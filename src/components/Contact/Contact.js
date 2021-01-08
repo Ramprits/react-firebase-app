@@ -28,7 +28,7 @@ export default function Contact(props) {
             </Typography>
             <Typography
               variant="subtitle1"
-              color="textSecondary"
+              color="inherit"
               paragraph={true}
             >
               {content["description"]}

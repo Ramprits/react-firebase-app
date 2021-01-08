@@ -3,6 +3,7 @@ import React from "react";
 import StructureContainer from "../components/__structures/StructureContainer";
 import HorizontalNav from "../components/Navigation";
 import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 export default function ContactPage() {
   return (

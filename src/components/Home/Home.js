@@ -32,7 +32,7 @@ export default function Home(props) {
               <Typography variant="h3" component="h2" gutterBottom={true}>
                 {content["header"]}
               </Typography>
-              <Typography variant="h5" color="textSecondary" paragraph={true}>
+              <Typography variant="h5" color="inherit" paragraph={true}>
                 {content["description"]}
               </Typography>
               <Box mt={4}>
