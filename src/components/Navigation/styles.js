@@ -17,6 +17,7 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       display: "none",
     },
+    marginLeft: "1rem",
   },
   linkBrandSmall: {
     display: "none",
@@ -34,7 +35,7 @@ export default makeStyles((theme) => ({
   tab: {
     minHeight: "64px",
     textTransform: "none",
-    minWidth: "100px",
+    minWidth: "120px",
   },
   drawerContainer: {
     width: 256,

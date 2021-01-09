@@ -1,13 +1,12 @@
 import React from "react";
-
-import Login from "../components/sign-in";
+import Register from "../components/sign-up";
 import Title from "../components/Title/Title";
 
-export default function LoginPage() {
+export default function RegisterPage() {
   return (
     <React.Fragment>
-      <Title title="Login" />
-      <Login
+      <Title title="Register" />
+      <Register
         content={{
           brand: {
             text: "Dhanai Fruits",

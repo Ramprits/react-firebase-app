@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
@@ -9,14 +8,14 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 
 import useStyles from "./styles";
-export default function Login(props) {
+export default function Register(props) {
   const classes = useStyles();
 
   const content = {
-    brand: { image: "mui-assets/img/logo-pied-piper-icon.png", width: 40 },
-    "02_header": "Sign in",
-    "02_primary-action": "Sign in",
-    "02_secondary-action": "Don't have an account?",
+    brand: { image: "mui-assets/img/logo-pied-piper.png", width: 40 },
+    "02_header": "Create a new account",
+    "02_primary-action": "Sign up",
+    "02_secondary-action": "Do you have an account?",
     "02_tertiary-action": "Forgot password?",
     ...props.content,
   };
@@ -25,7 +24,12 @@ export default function Login(props) {
 
   if (content.brand.image) {
     brand = (
-      <img src={content.brand.image} alt="" width={content.brand.width} />
+      <img
+        src={content.brand.image}
+        alt="logo"
+        width={content.brand.width}
+        height={content.brand.height}
+      />
     );
   } else {
     brand = content.brand.text || "";
@@ -55,18 +59,6 @@ export default function Login(props) {
                     id="email"
                     label="Email address"
                     autoComplete="email"
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    required
-                    fullWidth
-                    name="password"
-                    id="password"
-                    label="Password"
-                    type="password"
-                    autoComplete="current-password"
                   />
                 </Grid>
               </Grid>
