@@ -13,6 +13,7 @@
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.57",
     "clsx": "latest",
+    "firebase": "^8.2.2",
     "react": "latest",
     "react-dom": "latest",
     "react-helmet": "^6.1.0",

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
@@ -6,10 +6,21 @@ import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import { auth } from "../../firebase/firebase.config";
+
+const actionCodeSettings = {
+  url:
+    process.env.NODE_ENV !== "production"
+      ? process.env.REACT_APP_DEV_APPLICATION_URL
+      : process.env.REACT_APP_PROD_APPLICATION_URL,
+  handleCodeInApp: true,
+};
 
 import useStyles from "./styles";
+import { validateEmail } from "../../utils/helper";
 export default function Register(props) {
   const classes = useStyles();
+  const [email, setEmail] = useState("");
 
   const content = {
     brand: { image: "mui-assets/img/logo-pied-piper.png", width: 40 },
@@ -34,6 +45,16 @@ export default function Register(props) {
   } else {
     brand = content.brand.text || "";
   }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validateEmail(email)) {
+      alert("please enter valid email address");
+      return;
+    }
+    await auth.sendSignInLinkToEmail(email, actionCodeSettings);
+    setEmail("");
+    localStorage.setItem("emailForRegistration", email);
+  };
 
   return (
     <Container maxWidth="xs">
@@ -47,7 +68,7 @@ export default function Register(props) {
           </Typography>
         </Box>
         <Box>
-          <form noValidate>
+          <form noValidate onSubmit={handleSubmit}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
@@ -56,6 +77,7 @@ export default function Register(props) {
                   fullWidth
                   name="email"
                   id="email"
+                  onChange={(e) => setEmail(e.target.value)}
                   label="Email address"
                   autoComplete="email"
                 />
