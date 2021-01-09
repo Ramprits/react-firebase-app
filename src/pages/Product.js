@@ -2,15 +2,15 @@ import React from "react";
 
 import StructureContainer from "../components/__structures/StructureContainer";
 import HorizontalNav from "../components/Navigation";
-import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import Product from "../components/Product";
 
-export default function ContactPage() {
+export default function ProductPage() {
   return (
     <React.Fragment>
       <HorizontalNav />
 
-      <StructureContainer bucket={[<Contact />]} />
+      <StructureContainer bucket={[<Product />]} />
 
       <Footer
         content={{

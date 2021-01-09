@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
@@ -14,9 +13,9 @@ export default function Home(props) {
   const classes = useStyles();
 
   const content = {
-    header: "The New Internet",
+    header: "Fresh Fruits",
     description:
-      "The PiperNet is on it's way to revolutionize every smartphone, PC, and smart-fridge near you.",
+      "A mango is a stone fruit produced from numerous species of tropical trees belonging to the flowering plant genus Mangifera, cultivated mostly for their edible fruit",
     "primary-action": "Sign up for free",
     "secondary-action": "Read more",
     video: "https://www.youtube.com/embed/OtDxDvCpPL4",

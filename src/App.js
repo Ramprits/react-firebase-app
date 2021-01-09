@@ -1,9 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import IndexPage from "./pages/Index.js";
-import ContactPage from "./pages/Contact.js";
-import LoginPage from "./pages/Login.js";
+import IndexPage from "./pages/Index";
+import ContactPage from "./pages/Contact";
+import LoginPage from "./pages/Login";
+import ProductPage from "./pages/Product";
 
 export default function App() {
   return (
@@ -17,6 +18,9 @@ export default function App() {
         </Route>
         <Route exact path="/contact">
           <ContactPage />
+        </Route>
+        <Route exact path="/product">
+          <ProductPage />
         </Route>
         <Route exact path="/login">
           <LoginPage />

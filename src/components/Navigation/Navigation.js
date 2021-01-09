@@ -25,9 +25,9 @@ import useStyles from "./styles";
 const routerName = {
   0: "home",
   1: "product",
-  2: "support",
-  3: "contact",
+  2: "contact",
 };
+
 const HorizontalNav = (props) => {
   const classes = useStyles();
   const [state, setState] = useState(0);
@@ -56,13 +56,12 @@ const HorizontalNav = (props) => {
     if (window.location.pathname === "/product" && value !== 1) {
       setValue(1);
     }
-    if (window.location.pathname === "/support" && value !== 2) {
+
+    if (window.location.pathname === "/contact" && value !== 2) {
       setValue(2);
     }
-    if (window.location.pathname === "/contact" && value !== 3) {
-      setValue(3);
-    }
   }, [value]);
+
   return (
     <AppBar position="static">
       <Toolbar className={classes.toolbar}>
@@ -76,7 +75,7 @@ const HorizontalNav = (props) => {
           <MenuIcon />
         </IconButton>
         <Link
-          href="#"
+          onClick={() => props.history.push("/")}
           variant="h5"
           color="inherit"
           underline="none"
@@ -89,7 +88,7 @@ const HorizontalNav = (props) => {
           />
         </Link>
         <Link
-          href="#"
+          onClick={() => props.history.push("/")}
           variant="h5"
           color="inherit"
           underline="none"
@@ -119,12 +118,7 @@ const HorizontalNav = (props) => {
             underline="none"
             className={classes.tab}
           />
-          <Tab
-            label="Support"
-            underline="none"
-            color="inherit"
-            className={classes.tab}
-          />
+
           <Tab
             label="Contact"
             color="inherit"

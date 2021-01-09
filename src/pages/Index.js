@@ -10,7 +10,7 @@ export default function Index() {
     <React.Fragment>
       <HorizontalNav />
 
-      <StructureContainer bucket1={[<Home content={null} />]} />
+      <StructureContainer bucket={[<Home content={null} />]} />
 
       <Footer
         content={{

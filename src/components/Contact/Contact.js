@@ -8,7 +8,7 @@ import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 
-export default function Contact(props) {
+const Contact = (props) => {
   const content = {
     header: "Contact the Pied Piper team",
     description:
@@ -24,9 +24,6 @@ export default function Contact(props) {
         <Box mb={6} textAlign="center">
           <Typography variant="h4" component="h2" gutterBottom={true}>
             {content["header"]}
-          </Typography>
-          <Typography variant="subtitle1" color="inherit" paragraph={true}>
-            {content["description"]}
           </Typography>
         </Box>
         <Box>
@@ -100,4 +97,5 @@ export default function Contact(props) {
       </Box>
     </Container>
   );
-}
+};
+export default Contact;
